@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <parameter>
- <source password="SA1_sa_sa" user="sa" tablename="Department" tableschema="HumanResources" tablecatalog="AdventureWorks2012" jdbcurl="jdbc:sqlserver://192.168.99.100:1433">
+ <source password="SA1_sa_sa" user="sa" tablename="Department" tableschema="HumanResources" jdbcurl="jdbc:sqlserver://192.168.99.100:1433;DatabaseName=AdventureWorks2012">
 </source>
- <sink query="select * from Department" destination="src/test/resources" format="csv">
+ <sink query="(SELECT TOP 10 * FROM HumanResources.Department ) AS d" destination="src/test/resources" format="csv">
 </sink>
 </parameter>
