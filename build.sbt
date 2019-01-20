@@ -1,24 +1,17 @@
 import AssemblyKeys._
 
-name := "tms_download_spark"
+name := "jdbc_result_set_to_csv_file"
 
 version := "0.1"
 
 scalaVersion := "2.11.8"
 
-val sparkVersion = "2.3.0"
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % sparkVersion ,
-  "org.apache.spark" %% "spark-hive" % sparkVersion ,
-  "com.microsoft.sqlserver" % "mssql-jdbc" % "6.4.0.jre8",
-  "org.scalatest"    %% "scalatest"           % "3.0.5" % "test"
+  "com.github.tototoshi" %% "scala-csv" % "1.3.5",
+  "org.scala-lang" % "scala-xml" % "2.11.0-M4"
 )
 // This statement includes the assembly plug-in capabilities
 assemblySettings
 // Configure JAR used with the assembly plug-in
-jarName in assembly := "import_db.jar"
-// A special option to exclude Scala itself form our assembly JAR, since Spark
-// already bundles Scala.
-assemblyOption in assembly :=
-  (assemblyOption in assembly).value.copy(includeScala = false)
+jarName in assembly := "jdbc_result_set_to_csv_file.jar"

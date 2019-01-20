@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<parameter>
- <source password="SA1_sa_sa" user="sa" tablename="Department" tableschema="HumanResources" tablecatalog="AdventureWorks2012" jdbcurl="jdbc:sqlserver://192.168.99.100:1433">
-</source>
- <sink query="select * from Department" destination="src/test/resources" format="csv">
-</sink>
-</parameter>
